@@ -1,0 +1,6 @@
+exportPattern("^[[:alpha:]]+")
+importFrom("graphics", "abline", "boxplot", "hist", "legend", "lines","par", "plot", "points")
+importFrom("stats", "density", "dnorm", "median", "sd")
+importFrom("utils", "setTxtProgressBar", "txtProgressBar")
+importFrom("LIM","Read","Setup","Xsample","Flowmatrix","Xranges","Plotranges","Ldei")
+importFrom("enaR","pack")
