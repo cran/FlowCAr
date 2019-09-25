@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-<title>1.) Introduction</title>
+<title>Abstract</title>
 
 <script type="text/javascript">
 window.onload = function() {
@@ -19,9 +19,6 @@ window.onload = function() {
 
 
 
-<!-- MathJax scripts -->
-<script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
 
 
 <style type="text/css">
@@ -166,7 +163,7 @@ hr {
 </head>
 
 <body>
-<p><strong>Abstract</strong></p>
+<h2>Abstract</h2>
 
 <p>Network modelling requires a cogent, standardised methodology for the vital construction phase to facilitate appropriate interpretation of outcomes from the final analysis. Different approaches to network construction or single solutions have been commonplace in network modelling over the past decades and could be improved with multi-solution analysis of a single system to account for the inherent variability of input data. Linear inverse modelling (LIM) can be used to quantify complex flow networks by calculating network link values from under sampled data, typical for ecological networks. The resultant networks can be analysed using Ecological Network Analysis (ENA), a branch of network ecology used to holistically analyse the structure and dynamics of interactions in networks. The <strong>FlowCAr</strong> package provides a standardised methodology for the construction phase of network modelling, producing a range of mathematically and ecologically sound flow networks from given input data, solved using LIM. These networks can be visually assessed, to ensure the LIM solution space has been adequately sampled. <strong>FlowCAr</strong> restructures and packs the list of LIM solved networks, enabling ENA to be performed on the flow networks in R package enaR.</p>
 
@@ -176,71 +173,47 @@ hr {
 
 <p><em>Keywords</em>: Network construction, Linear inverse modelling, flow networks, food web, Ecological Network Analysis (ENA)</p>
 
-<p>Table of Contents</p>
+<p><strong>Table of Contents</strong></p>
 
-<p>Table of Contents        2</p>
+<p>Table of Contents &hellip;..     2</p>
 
-<p>1.) Introduction        3</p>
+<p>1.) Introduction  &hellip;..      3</p>
 
-<p>2.) Linear Inverse Modelling        5</p>
+<p>2.) Linear Inverse Modelling  &hellip;..      5</p>
 
-<p>3.) Flow networks        7</p>
+<p>3.) Flow networks &hellip;..       7</p>
 
-<p>4.) Formatting of the Input File for the FlowCAr Package        12</p>
+<p>4.) Formatting of the Input File for the FlowCAr Package  &hellip;..      12</p>
 
-<p>5.) Using the FlowCAr functions: creating a list of LIM solved networks, restructuring into enaR network objects and validating and visualising these networks:        16</p>
+<p>5.) Using the FlowCAr functions: creating a list of LIM solved networks, restructuring into enaR network objects and validating and visualising these networks: &hellip;..       16</p>
 
-<p>5.1.) Network Construction        17</p>
+<p>5.1.) Network Construction  &hellip;..      17</p>
 
-<p>5.1.1) Solving        17</p>
+<p>5.1.1) Solving  &hellip;..      17</p>
 
-<p>5.1.2) Optional Preparations:        19</p>
+<p>5.1.2) Optional Preparations: &hellip;..       19</p>
 
-<p>5.2) Packing LIM networks into enaR network objects        21</p>
+<p>5.2) Packing LIM networks into enaR network objects &hellip;..       21</p>
 
-<p>5.3) Main Function        24</p>
+<p>5.3) Main Function  &hellip;..      24</p>
 
-<p>5.4) Network Validation and Visualisation        26</p>
+<p>5.4) Network Validation and Visualisation &hellip;..       26</p>
 
-<p>5.4.1) plotRange        27</p>
+<p>5.4.1) plotRange  &hellip;..      27</p>
 
-<p>5.4.2) plotNodeFlows        29</p>
+<p>5.4.2) plotNodeFlows  &hellip;..      29</p>
 
-<p>5.4.3) plotFlowRange        30</p>
+<p>5.4.3) plotFlowRange  &hellip;..      30</p>
 
-<p>6.) Producing Indices from packed enaRList using enaR package:        32</p>
+<p>6.) Producing Indices from packed enaRList using enaR package:  &hellip;..      32</p>
 
-<p>7.) Conclusions        35</p>
+<p>7.) Conclusions &hellip;..       35</p>
 
-<p>8.) References        37</p>
+<p>8.) References  &hellip;..      37</p>
 
-<p>9.) Appendix        40</p>
+<p>9.) Appendix  &hellip;..      40</p>
 
-<p><strong>Table of Figures</strong></p>
-
-<p>Figure 1: Simplified workflow of the FlowCAr package.        5</p>
-
-<p>Figure 2: Schematic of a hypothetical four node food web. Flow name abbreviations are explained in Table 1.        8</p>
-
-<p>Figure 3: Operational procedure of the FlowCAr package.        17</p>
-
-<p>Figure 4: Output from the plotRange function.        28</p>
-
-<p>Figure 5: plotRange output with flowLimit restrictions. The blue crosses represent the restricted ranges.        29</p>
-
-<p>Figure 6: Output from the plotNodeFlows function showing the range of flow values leaving the invertebrate node. Depicted through a density plot, histogram and boxplot.        30</p>
-
-<p>Figure 7: Output from the plotFlowRange function, illustrating the invertebrate to detritus flow.        31</p>
-
-<p>Figure 8: Output from the plotFlowRange function, illustrating the invertebrate to vertebrate flow.        31</p>
-
-<p>Figure 9: Density plot of the range of values for Total System Throughput (TSTp).        33</p>
-
-<p>Figure 10: Finn Cycling Index (FCI) vs Indirect to Direct Flow Ratio (I/D).        34</p>
-
-<p>Figure 11: A/DC ratio over four different seasons.        35</p>
-
-<h1>1.) Introduction</h1>
+<h2>1.) Introduction</h2>
 
 <p>Quantification of flow networks such as food webs are often problematic due to data deficiency as direct flow measurement is particularly difficult, even in comparatively well sampled systems (Woodward <em>et al.</em>, 2005; Fath <em>et al.</em>, 2007; Soetaert and van Oevelen, 2009; van Oevelen <em>et al.</em>, 2010; Lau <em>et al.,</em> 2017). The difficulty can arise from the high cost and high labour required to measure all aspects of an ecological system. Most ecological data sets only consist of biomass estimates of aggregated functional groups and an occasional rate measurement (Woodward <em>et al.</em>, 2005; Soetaert and van Oevelen, 2009; Soetaert and van Oevelen, 2010). This <em>in situ</em> measured data is often referred to as hard data (Soetaert and van Oevelen, 2009; van Oevelen <em>et al.,</em> 2009). Due to food web complexity, system information based only on the limited field measurements is inadequate to derive a clear and accurate representation of the flows in these systems (Soetaert <em>et al.,</em> 2009; Soetaert and van Oevelen, 2009). Data from other, similar systems and literature is used to fill in some of these gaps. Such secondary data sources are referred to as soft data (Woodward <em>et al.</em>, 2005; Meersche <em>et al.</em>, 2009; Soetaert and van Oevelen, 2009; van Oevelen <em>et al.</em>, 2010; Soetaert and van Oevelen, 2010). Secondary data sources can be very helpful as it allows constraints to be applied to the flows. However, there may be consequences to using this non-system specific data. The manner in which system components react and interact may change between systems and over time e.g. there may be a species which occurs in two similar systems but may have different production rates due to an influence from a specific factor within the systems (Woodward <em>et al.</em>, 2005; Meersche <em>et al.</em>, 2009; Soetaert and van Oevelen, 2009; van Oevelen <em>et al.</em>, 2010; Soetaert and van Oevelen, 2010). Therefore, soft data are to be used sparingly and only where necessary. To overcome these data limitations, linear inverse modelling (LIM) was developed and has been expanded upon (Klepper and Van de Kamer, 1987; Vézina and Platt, 1988; Meersche <em>et al.</em>, 2009; Soetaert and van Oevelen, 2009; van Oevelen <em>et al.</em>, 2010; Soetaert and van Oevelen, 2010).</p>
 
@@ -254,9 +227,9 @@ hr {
 
 <p>The single solution approach is a widely recognised issue in network ecology as it ignores the variability in flows and stocks values and the infinite number of solutions for an underdetermined flow network problem (Vézina <em>et al.,</em> 2004; Kones <em>et al.,</em> 2006; van Oevelen <em>et al.,</em> 2010). To provide standardisation in the vital construction phase of flow network modelling and move towards multiple network analysis we introduce the package <strong>FlowCAr.</strong></p>
 
-<p>The <strong>FlowCAr</strong> package provides the user with a novel approach to create a range of possible solved LIM food web networks and analyse this range using the ENA approach. This package also provides a link from the construction (and solving) of the networks using LIM (van Oevelen <em>et al.,</em> 2010), to the analysis using <strong>enaR</strong> (Borrett and Lau, 2014). With this package the user can ensure the generated networks have adequately sampled the LIM solution space and that these networks accurately represent the input ecological constraints. The <strong>FlowCAr</strong> package introduces several functions which evaluates its performance. Figure 1 indicates an example workflow of <strong>FlowCAr</strong> , from the input file, the functions used and the outputs of those functions, which are explained in Section 4 (Formatting of the Input File for the FlowCAr Package) of this document.</p>
+<p>The <strong>FlowCAr</strong> package provides the user with a novel approach to create a range of possible solved LIM food web networks and analyse this range using the ENA approach. This package also provides a link from the construction (and solving) of the networks using LIM (van Oevelen <em>et al.,</em> 2010), to the analysis using <strong>enaR</strong> (Borrett and Lau, 2014). With this package the user can ensure the generated networks have adequately sampled the LIM solution space and that these networks accurately represent the input ecological constraints. The <strong>FlowCAr</strong> package introduces several functions which evaluates its performance. </p>
 
-<h1>2.) Linear Inverse Modelling</h1>
+<h2>2.) Linear Inverse Modelling</h2>
 
 <p>Following is  a brief description of the methods for Linear Inverse Modelling(van Oevelen <em>et al.</em>, 2009) <strong>.</strong></p>
 
@@ -288,15 +261,15 @@ hr {
 <li>Our package ( <strong>FlowCAr</strong> ) uses the <em>Xsample</em> technique to create a list of possible solutions of each problem. The <em>Xsample</em> technique uses a sampling method based on the MCMC algorithm to retrieve an array of flow values from within the solution set,which is within the specified constraints of the ecological input data. Each set of flow values representing an individual network provide the flow matrices for the LIM networks, which can then be converted to <strong>enaR</strong> network objects for analyses.</li>
 </ul>
 
-<h1>3.) Flow networks</h1>
+<h2>3.) Flow networks</h2>
 
 <p>Flow networks are represented as a set of nodes (compartments), which are connected by flows (arrows). The flows have direction:</p>
 
-<p><em>A      B</em></p>
+<p><strong>A-&gt;B</strong></p>
 
 <p>Indicates a flow from <em>A</em> to <em>B</em>, while:</p>
 
-<p><em>A        B</em></p>
+<p><strong>A&lt;=&gt;B</strong></p>
 
 <p>Indicates two flows in both directions.</p>
 
@@ -308,7 +281,7 @@ hr {
 
 <p>In some cases, direct flow measurements exist and are used to set up equality equations. Other empirically measured system attributes such as node production and respiration rates from literature or similar systems are used as parameters to set up inequality equations. Even if these parts of the system are well sampled, the empirically measured data still represents ecological variability. These parameters will therefore be used to constrain the flows within a range, accounting for the inherent variability within a system (Klepper and Van de Kamer, 1987; Vézina and Platt, 1988; Soetaert and van Oevelen, 2010; van Oevelen <em>et al.</em>, 2010).</p>
 
-<p>A simple ecological network (Figure 2) is introduced here to explain the functioning of the <strong>FlowCAr</strong> package. The ecological network has four nodes: detritus, a plant (autotroph) and two animals (heterotrophs): an invertebrate which feeds on detritus and the plant, and a vertebrate which feeds on the invertebrate. The ecological network is assumed to be mass balanced and in a steady state i.e. masses (flow weights and node masses) remain unchanged in time. There are ten flows (Table 1) which connect the food web components with each other and across the system boundary.</p>
+<p>A simple ecological network is introduced here to explain the functioning of the <strong>FlowCAr</strong> package. The ecological network has four nodes: detritus, a plant (autotroph) and two animals (heterotrophs): an invertebrate which feeds on detritus and the plant, and a vertebrate which feeds on the invertebrate. The ecological network is assumed to be mass balanced and in a steady state i.e. masses (flow weights and node masses) remain unchanged in time. There are ten flows (Table 1) which connect the food web components with each other and across the system boundary.</p>
 
 <p>Table 1: Flow names and abbreviations for the 4-node network.</p>
 
@@ -362,17 +335,17 @@ hr {
 
 <p>The mass balance equations for the internal flows between the four components, with the rate of change = 0, is given by:</p>
 
-<p>dPLANTdt=0=Grossprimaryproduction−grazingonplant−plantrespiration−plantmortality</p>
+<p>dPLANT/dt=0=Grossprimaryproduction−grazingonplant−plantrespiration−plantmortality</p>
 
-<p>dINVERTEBRATEdt=0=grazingonplant+feedingondetritus</p>
+<p>dINVERTEBRATE/dt=0=grazingonplant+feedingondetritus</p>
 
 <p>−invertebraterespiration−invertebratemortality</p>
 
-<p>dVERTEBRATEdt=0=vertebrateconsumption−vertebraterespiration</p>
+<p>dVERTEBRATE/dt=0=vertebrateconsumption−vertebraterespiration</p>
 
 <p>−vertebratemortality</p>
 
-<p>dDETRITUSdt=0=plantmortality+invertebratemortality+vertebratemortality</p>
+<p>dDETRITUS/dt=0=plantmortality+invertebratemortality+vertebratemortality</p>
 
 <p>−feedingondetritus</p>
 
@@ -392,35 +365,33 @@ hr {
 
 <p><em>VerR = 0.75</em></p>
 
-<p>For just the internal flows we obtain the following matrix:</p>
-
-<p>We can now illustrate the full system in matrix notation with internal flows and flows between the system and the external environment (boundary flows). Flows across the system boundary are inputs and exports:</p>
-
 <p>The parameters which are used to set up the inequality equations are as follows:</p>
 
-<p>0.6*Plant biomass &amp;lt; Plant Net Primary Production &amp;lt; 1.1*Plant biomass</p>
+<p>0.6*Plant biomass &lt; Plant Net Primary Production &lt; 1.1*Plant biomass</p>
 
-<p>0.4*Plant Net Primary Production &amp;lt; Plant Respiration &amp;lt; 0.7*Plant Net Primary Production</p>
+<p>0.4*Plant Net Primary Production &lt; Plant Respiration &lt; 0.7*Plant Net Primary Production</p>
 
-<p>0.004*Invertebrate biomass &amp;lt; Invertebrate Production &amp;lt; 0.06*Invertebrate biomass</p>
+<p>0.004*Invertebrate biomass &lt; Invertebrate Production &lt; 0.06*Invertebrate biomass</p>
 
-<p>0.0003* Vertebrate biomass &amp;lt; Vertebrate Production &amp;lt; 0.005*Vertebrate biomass</p>
+<p>1*Invertebrate biomass &lt; Invertebrate Production &lt; 4*Invertebrate biomass</p>
 
-<p>0.4&amp;lt; (Invertebrate Consumption – Invertebrate Mortality)/Invertebrate Consumption&amp;lt;0.75</p>
+<p>0.0003* Vertebrate biomass &lt; Vertebrate Production &lt; 0.005*Vertebrate biomass</p>
 
-<p>1000 &amp;lt; Input to plant &amp;lt; 1600 (Input across the system boundary to the plant may vary between 1000 and 1600 units)</p>
+<p>0.4&lt; (Invertebrate Consumption – Invertebrate Mortality)/Invertebrate Consumption&lt; 0.75</p>
 
-<p>500 &amp;lt; Input to detritus &amp;lt; 1500</p>
+<p>1000 &lt; Input to plant &lt; 1600 (Input across the system boundary to the plant may vary between 1000 and 1600 units)</p>
 
-<p>1000&amp;lt; Export from plant &amp;lt; 1600</p>
+<p>500 &lt; Input to detritus &lt; 1500</p>
 
-<p>0.21&amp;lt; Export from vertebrate &amp;lt; 0.36</p>
+<p>1000&lt; Export from plant &lt; 1600</p>
 
-<p>200&amp;lt; Export from detritus &amp;lt; 400</p>
+<p>0.21&lt; Export from vertebrate &lt; 0.36</p>
+
+<p>200&lt; Export from detritus &lt; 400</p>
 
 <p>This model has 5 equations and 22 inequalities: there are 10 unknown flows. This problem is solved with <strong>LIM</strong> (using <em>Xsample</em>) which is incorporated in the <strong>FlowCAr</strong> package and produces the ensemble of flow values.</p>
 
-<h1>4.) Formatting of the Input File for the FlowCAr Package</h1>
+<h2>4.) Formatting of the Input File for the FlowCAr Package</h2>
 
 <p>The required input file for this package is a &ldquo;.R&rdquo; text file (referred to as the <strong>FlowCAr</strong> input file from now). The structure of the <strong>FlowCAr</strong> input file follows a similar structure to that of the <strong>LIM</strong> package (van Oevelen <em>et al.,</em> 2009) input file, with some modifications.</p>
 
@@ -431,9 +402,7 @@ hr {
 <ul>
 <li>All guidelines outlined in &ldquo;5. Structure of the LIM input file&rdquo; in <strong>LIM</strong> package (Soetaert and van Oevelen, 2010). Provided in the appendix of this document.</li>
 <li>In the &#39;###Component&#39; section, all non-living (dead) component names (e.g. detritus) are required to have &#39;NLNode&#39; in the component name i.e. detritus would be detNLNode or detritusNLNode. It is not case sensitive as the <strong>FlowCAr</strong>&#39;<em>LIMbuild&#39;</em> function converts all components to uppercase.</li>
-<li>In the &#39;###Externals&#39; section, the respiration element (e.g. CO
-# 2
-) is required to feature FIRST.</li>
+<li>In the &#39;###Externals&#39; section, the respiration element (e.g. CO2) is required to feature FIRST.</li>
 <li>In the &#39;###Externals&#39; section, all Inputs (e.g. ppInput) require &#39;Input&#39; at the end of the name, with the &#39;I&#39; in UPPERCASE, i.e. plant Input would be plantInput. This is case sensitive.</li>
 <li>In the &#39;###Externals&#39; section, all Exports (e.g. ppExport) require &#39;Export&#39; at the end of the name, with the &#39;E&#39; in UPPERCASE, i.e. plant export would be plantExport. This is case sensitive.</li>
 </ul>
@@ -444,15 +413,13 @@ hr {
 
 <p>###Component</p>
 
-<p>!Steady state biomasses: mgC/m</p>
-
-<h1>2</h1>
+<p>!Steady state biomasses: mgC/m2</p>
 
 <p>pp = 800 !Plant</p>
 
-<p>inv = 2000 !Invertebrate</p>
+<p>invertebrate = 2000 !Invertebrate</p>
 
-<p>ver = 500 !Vertebrate</p>
+<p>vertebrate = 500 !Vertebrate</p>
 
 <p>detNLNode = 10000 !Detritus</p>
 
@@ -466,9 +433,9 @@ hr {
 
 <p>ppExport</p>
 
-<p>verExport</p>
-
 <p>detNLNodeInput</p>
+
+<p>vertebrateExport</p>
 
 <p>detNLNodeExport</p>
 
@@ -476,7 +443,7 @@ hr {
 
 <p>###Variables</p>
 
-<p>!Plant</p>
+<p>!Primary producers</p>
 
 <p>ppGPP = GPP</p>
 
@@ -486,51 +453,51 @@ hr {
 
 <p>!Organisms</p>
 
-<p>invC = Pgraz + InvCon</p>
+<p>invertebrateC = Pgraz + InvCon</p>
 
-<p>invR = InvR</p>
+<p>invertebrateR = InvR</p>
 
-<p>invP = invC - invR - InvMort</p>
+<p>invertebrateP = invertebrateC - invertebrateR - InvMort</p>
 
-<p>verC = VerCon</p>
+<p>vertebrateC = VerCon</p>
 
-<p>verR = VerR</p>
+<p>vertebrateR = VerR</p>
 
-<p>verP = verC - verR - VerMort</p>
+<p>vertebrateP = vertebrateC - vertebrateR - VerMort</p>
 
 <p>###End Variables</p>
 
 <p>###Flows</p>
 
-<p>GPP : CO2 -&amp;gt; pp !Plant energy gain</p>
+<p>Pgraz : pp -&gt; invertebrate</p>
 
-<p>Pgraz : pp -&amp;gt; inv !Grazing on plant</p>
+<p>Pmort : pp -&gt; detNLNode</p>
 
-<p>Pmort : pp -&amp;gt; detNLNode !Plant mortality</p>
+<p>VerCon : invertebrate -&gt; vertebrate</p>
 
-<p>PR : pp -&amp;gt; CO2 !Plant respiration</p>
+<p>InvMort : invertebrate -&gt; detNLNode</p>
 
-<p>InvCon : detNLNode -&amp;gt; inv !Feeding on detritus</p>
+<p>VerMort : vertebrate -&gt; detNLNode</p>
 
-<p>InvR : inv -&amp;gt; CO2 !Invertebrate respiration</p>
+<p>InvCon : detNLNode -&gt; invertebrate</p>
 
-<p>InvMort : inv -&amp;gt; detNLNode !Invertebrate mortality</p>
+<p>GPP : CO2 -&gt; pp</p>
 
-<p>VerCon : inv -&amp;gt; ver !Feeding on invertebrate</p>
+<p>PR : pp -&gt; CO2</p>
 
-<p>VerR : ver -&amp;gt; CO2 !Vertebrate respiration</p>
+<p>InvR : invertebrate -&gt; CO2</p>
 
-<p>VerMort : ver -&amp;gt; detNLNode !Vertebrate mortality</p>
+<p>VerR : vertebrate -&gt; CO2</p>
 
-<p>ppIn : ppInput -&amp;gt; pp !Plant Input</p>
+<p>ppIn : ppInput -&gt; pp</p>
 
-<p>detIn : detNLNodeInput -&amp;gt; detNLNode !Detritus Input</p>
+<p>detIn : detNLNodeInput -&gt; detNLNode</p>
 
-<p>ppEx : pp -&amp;gt; ppExport !Plant export</p>
+<p>ppEx : pp -&gt; ppExport</p>
 
-<p>VerEx : ver -&amp;gt; verExport !Vertebrate export</p>
+<p>VerEx : vertebrate -&gt; vertebrateExport</p>
 
-<p>detEx : detNLNode -&amp;gt; detNLNodeExport !Detritus export</p>
+<p>detEx : detNLNode -&gt; detNLNodeExport</p>
 
 <p>###End Flows</p>
 
@@ -544,17 +511,17 @@ hr {
 
 <p>ppRratioNPPmax = 0.7</p>
 
-<p>invPratioBmin = 0.004</p>
+<p>invertebratePratioBmin = 0.004</p>
 
-<p>invPratioBmax = 0.06</p>
+<p>invertebratePratioBmax = 0.06</p>
 
-<p>invRratioPmin = 1</p>
+<p>invertebrateRratioPmin = 1</p>
 
-<p>invRratioPmax = 4</p>
+<p>invertebrateRratioPmax = 4</p>
 
-<p>verPratioBmin = 0.0003</p>
+<p>vertebratePratioBmin = 0.0003</p>
 
-<p>verPratioBmax = 0.005</p>
+<p>vertebratePratioBmax = 0.005</p>
 
 <p>###End parameters</p>
 
@@ -570,49 +537,45 @@ hr {
 
 <p>ppR = ppNPP * [ppRratioNPPmin, ppRratioNPPmax]</p>
 
-<p>invP = inv * [invPratioBmin, invPratioBmax]</p>
+<p>invertebrateP = invertebrate * [invertebratePratioBmin, invertebratePratioBmax]</p>
 
-<p>invR = invP * [invRratioPmin, invRratioPmax]</p>
+<p>invertebrateR = invertebrateP * [invertebrateRratioPmin, invertebrateRratioPmax]</p>
 
-<p>verP = ver * [verPratioBmin, verPratioBmax]</p>
+<p>vertebrateP = vertebrate * [vertebratePratioBmin, vertebratePratioBmax]</p>
 
-<p>invC - InvMort &amp;gt; 0.4*invC</p>
+<p>invertebrateC - InvMort &gt; 0.4*invertebrateC</p>
 
-<p>invC - InvMort &amp;lt; 0.75*invC</p>
+<p>invertebrateC - InvMort &lt; 0.75*invertebrateC</p>
 
-<p>ppIn &amp;lt; 1600</p>
+<p>ppIn &lt; 1600</p>
 
-<p>ppIn &amp;gt; 1000</p>
+<p>ppIn &gt; 1000</p>
 
-<p>detIn &amp;lt; 1500</p>
+<p>detIn &lt; 1500</p>
 
-<p>detIn &amp;gt; 500</p>
+<p>detIn &gt; 500</p>
 
-<p>ppEx &amp;lt; 1600</p>
+<p>ppEx &lt; 1600</p>
 
-<p>ppEx &amp;gt; 1000</p>
+<p>ppEx &gt; 1000</p>
 
-<p>verEx &amp;lt; 0.36</p>
+<p>verEx &lt; 0.36</p>
 
-<p>verEx &amp;gt; 0.21</p>
+<p>verEx &gt; 0.21</p>
 
-<p>detEx &amp;lt; 400</p>
+<p>detEx &lt; 400</p>
 
-<p>detEx &amp;gt; 200</p>
+<p>detEx &gt; 200</p>
 
-<p>###End Inequalities</p>
+<p>####End Inequalities</p>
 
-<p>It is important to note the use of &#39;###SectionName…###End SectionName&#39; to declare items, and that the sections &#39;###Stocks and &#39;###Externals&#39; define the names. A mass balance equation is only generated for stocks of internal nodes but not for the external nodes (e.g. CO</p>
-
-<h1>2</h1>
-
-<p>). A name is declared as &ldquo;name: &rdquo;, and exclamation mark (!) demarcates the start of a comment, which is ignored when read.</p>
+<p>It is important to note the use of &#39;###SectionName…###End SectionName&#39; to declare items, and that the sections &#39;###Stocks and &#39;###Externals&#39; define the names. A mass balance equation is only generated for stocks of internal nodes but not for the external nodes (e.g. CO2). A name is declared as &ldquo;name: &rdquo;, and exclamation mark (!) demarcates the start of a comment, which is ignored when read.</p>
 
 <p>Although this can be a lengthy process, the problem formulation is elegant, flexible, robust and can easily be adjusted at a later point.</p>
 
-<h1>5.) Using the FlowCAr functions: creating a list of LIM solved networks, restructuring into enaR network objects and validating and visualising these networks:</h1>
+<h2>5.) Using the FlowCAr functions: creating a list of LIM solved networks, restructuring into enaR network objects and validating and visualising these networks:</h2>
 
-<p>The <strong>FlowCAr</strong> input file is used to create the matrices and vectors that constitute the LIM problem. This is solved using <em>Xsample</em> to create a list of multiple possible LIM networks within the constraints of the ecological input data. Thereafter, this LIM list of solved possible networks is converted to a list of <strong>enaR</strong> network objects, ready to be used for network analysis in the R package <strong>enaR</strong> (Borrett and Lau<em>,</em> 2014). There are several network validations and visualisation tools available. Functions of the <strong>FlowCAr</strong> package are summarised in Table 2 and Figure 3.</p>
+<p>The <strong>FlowCAr</strong> input file is used to create the matrices and vectors that constitute the LIM problem. This is solved using <em>Xsample</em> to create a list of multiple possible LIM networks within the constraints of the ecological input data. Thereafter, this LIM list of solved possible networks is converted to a list of <strong>enaR</strong> network objects, ready to be used for network analysis in the R package <strong>enaR</strong> (Borrett and Lau, 2014). There are several network validations and visualisation tools available. Functions of the <strong>FlowCAr</strong> package are summarised in Table 2.</p>
 
 <p>Table 2: <strong>FlowCAr</strong> functions.</p>
 
@@ -623,52 +586,94 @@ hr {
 </tr>
 </thead><tbody>
 <tr>
+<td>1.1) Network Construction</td>
+<td>1.1.1) LIMbuild</td>
+</tr>
+<tr>
+<td>1.1) Solving</td>
+<td>1.1.2) limListGen</td>
+</tr>
+<tr>
+<td>1.2) Optional Preparations</td>
+<td>1.2.1) flowCheck</td>
+</tr>
+<tr>
 <td></td>
+<td>1.2.2) flowLimit</td>
+</tr>
+<tr>
+<td>&mdash;</td>
+<td>&mdash;</td>
+</tr>
+<tr>
+<td>1.2) Restructuring and Packing</td>
+<td>2.1) internalFlowGen</td>
+</tr>
+<tr>
 <td></td>
+<td>2.2) inputVector</td>
+</tr>
+<tr>
+<td></td>
+<td>2.3) respVector</td>
+</tr>
+<tr>
+<td></td>
+<td>2.4) exportVector</td>
+</tr>
+<tr>
+<td></td>
+<td>2.5) ouputVector</td>
+</tr>
+<tr>
+<td></td>
+<td>2.6) biomassVector</td>
+</tr>
+<tr>
+<td></td>
+<td>2.7) livingVector</td>
+</tr>
+<tr>
+<td></td>
+<td>2.8) PackNet</td>
+</tr>
+<tr>
+<td>&mdash;</td>
+<td>&mdash;</td>
+</tr>
+<tr>
+<td>1.3) Main Function (Do-all Function, 1) +2))</td>
+<td>3) enaListGen</td>
+</tr>
+<tr>
+<td>1.4) Network Validation and Visualisation</td>
+<td>4.1) plotNodeFlows</td>
+</tr>
+<tr>
+<td></td>
+<td>4.2) plotRange</td>
+</tr>
+<tr>
+<td></td>
+<td>4.3) plotFlowRange</td>
 </tr>
 </tbody></table>
 
-<ol>
-<li>1)Network Construction
-1.1) Solving                      1.2) Optional                              Preparations | 1.1.1) LIMbuild |
-| 1.1.2) limListGen |
-| 1.2.1) flowCheck |
-| 1.2.2) flowLimit |
-|</li>
-<li>2)Restructuring and Packing
-| 2.1) internalFlowGen |
-| 2.2) inputVector |
-| 2.3) respVector |
-| 2.4) exportVector |
-| 2.5) ouputVector |
-| 2.6) biomassVector |
-| 2.7) livingVector |
-| 2.8) PackNet |
-|</li>
-<li>3)Main Function (Do-all Function, 1) +2))
-| 3) enaListGen |
-|</li>
-<li><p>4)Network Validation and Visualisation
-| 4.1) plotNodeFlows |
-| 4.2) plotRange |
-| 4.3) plotFlowRange |</p>
+<p>Individual functions are presented for full understanding of the procedure, however the main function, <strong>enaListGen</strong> provides a one function shortcut. The four-node network input file (&ldquo;4node.R&rdquo;) given as an example earlier in the document is used to illustrate the use of all <strong>FlowCAr</strong> functions.</p>
 
-<p>Individual functions are presented for full understanding of the procedure, however the main function, <strong>enaListGen</strong> provides a one function shortcut. The four-node network input file (&ldquo;4node.R&rdquo;) given as an example earlier in the document is used to illustrate the use of all <strong>FlowCAr</strong> functions.</p></li>
-</ol>
-
-<h2>5.1.) Network Construction</h2>
+<h3>5.1.) Network Construction</h3>
 
 <p>Once the <strong>FlowCAr</strong> input file (&ldquo;4node.R&rdquo;) has been created, it needs to be reformatted into a LIM readable file (limfile) and the unknown flows are solved to generate the ensemble of networks.</p>
 
-<h3>5.1.1) Solving</h3>
+<h4>5.1.1) Solving</h4>
 
-<h4>5.1.1.1) LIMbuild</h4>
+<h5>5.1.1.1) LIMbuild</h5>
 
 <p>The <em>LIMbuild()</em> function outputs the limfile and a text-output which re-iterates the network components. The limfile is an object which takes the input file and rewrites it as a function of the unknowns, creating the matrices and vectors of the problem (Soetaert <em>et al.,</em> 2009; van Oevelen <em>et al.,</em> 2010).</p>
 
 <p>Running the <strong>LIMbuild()</strong> function:</p>
 
-<p>_ _<em>N4 &amp;lt;- LIMbuild(Rfile = &ldquo;4node.R&rdquo;)</em></p>
+<p>_ _<em>N4 &lt;- LIMbuild(Rfile = &ldquo;4node.R&rdquo;)</em></p>
 
 <p>This function outputs the result:</p>
 
@@ -678,17 +683,23 @@ hr {
 
 <p><em>Please check the following information is correct:</em></p>
 
-<p>_      Network nodes: PP INVERTEBRATE VERTEBRATE DETNLNODE_</p>
+<p>_      Network nodes: 
+PPINVERTEBRATEVERTEBRATEDETNLNODE_</p>
 
-<p>_      Externals: CO2 ppInput ppExport detNLNodeInput vertebrateExport detNLNodeExport_</p>
+<p>_      Externals: 
+CO2ppInputppExportdetNLNodeInputvertebrateExportdetNLNodeExport_</p>
 
-<p>_      Input nodes: ppInput detNLNodeInput_</p>
+<p>_      Input nodes: 
+ppInputdetNLNodeInput_</p>
 
-<p>_      Export nodes: ppExport vertebrateExport detNLNodeExport_</p>
+<p>_      Export nodes: 
+ppExportvertebrateExportdetNLNodeExport_</p>
 
-<p>_      Respiration Element: CO2_</p>
+<p>_      Respiration Element: 
+CO2_</p>
 
-<p>_      Non-Living nodes: DETNLNODE_</p>
+<p>_      Non-Living nodes: 
+DETNLNODE_</p>
 
 <p><em>If the above details do not represent your model correctly, please adjust your FlowCAr input file and re-run this function</em></p>
 
@@ -696,7 +707,7 @@ hr {
 
 <p>Once the information has been verified, multiple possible LIM networks are generated from this output, <em>N4</em> using the <strong>limListGen</strong> function.</p>
 
-<h4>5.1.1.2) limListGen</h4>
+<h5>5.1.1.2) limListGen</h5>
 
 <p>The <strong>limListGen</strong> function creates a list of solved possible networks from the limfile which is the output of the <em>LIMbuild()</em> function. The <strong>limListGen</strong> functionuses the <em>Xsample()</em> technique from the <strong>LIM</strong> package (van Oevelen <em>et al.</em>, 2010). The <em>Xsample()</em> technique solves the solution space a chosen number of times (iterations) using the Monte Carlo Markov Chain (MCMC) algorithm. The distance the algorithm must move between solutions is the jump size. The number of iterations and jump size can be defined within the <strong>limListGen</strong> function or, if unspecified, is default (3000 iterations and NULL jump size). If the jump size is defaulted, <em>Xsample()</em> attempts to calculate the ideal size. This requires more processing power and time.</p>
 
@@ -704,7 +715,7 @@ hr {
 
 <p>Running the <strong>limListGen()</strong> function:</p>
 
-<p><em>N4LIM &amp;lt;- limListGen(limfile = N4, …)</em></p>
+<p><em>N4LIM &lt;- limListGen(limfile = N4, …)</em></p>
 
 <p>Produces the output:</p>
 
@@ -720,17 +731,17 @@ hr {
 
 <p>List object 2 can be accessed through: N4LIM$FlowMatrices.</p>
 
-<h3>5.1.2) Optional Preparations:</h3>
+<h4>5.1.2) Optional Preparations:</h4>
 
 <p>These include checks on whether the generated matrices conform to the ecological input data specified in the <strong>FlowCAr</strong> input file. The user may also want to further restrict the range of certain flows. This can be done with two functions.</p>
 
-<h4>5.1.2.1) flowCheck</h4>
+<h5>5.1.2.1) flowCheck</h5>
 
 <p>The first optional check is the <em>flowCheck()</em> function. This function cross-checks the flow matrices generated in the <em>limListGen()</em> function against the original flow matrix generated by the <em>LIMbuild()</em> function run on the <strong>FlowCAr</strong> input file. The MCMC algorithm can result in flow matrices having flows with a value of zero when the desire by the user is to have a flow greater than zero. If there is a cell value larger than 0 in the original flow matrix (i.e. a flow was originally specified to exist in the <strong>FlowCAr</strong> input file), there should be a cell value larger than 0 in the generated list of flow matrices. In the same way, if there is a 0 (i.e. no flow was originally specified) in the original flow matrix, there should be a 0 in the generated list of flow matrices.</p>
 
 <p>Running the <strong>flowCheck()</strong> function:</p>
 
-<p><em>N4LIMc &amp;lt;- flowCheck(limfile = N4, limList = N4LIM)</em></p>
+<p><em>N4LIMc &lt;- flowCheck(limfile = N4, limList = N4LIM)</em></p>
 
 <p>Produces a list variable <em>N4LIMc</em> which contains 2 objects.</p>
 
@@ -742,7 +753,7 @@ hr {
 
 <p>Object 2 can be accessed through: N4LIMc$DiscardedList</p>
 
-<h4>5.1.2.2) flowLimit</h4>
+<h5>5.1.2.2) flowLimit</h5>
 
 <p>The second optional check is the <em>flowLimit</em>() function. In this function, restrictions can be applied to a specific flow. The arguments of the function are:</p>
 
@@ -754,7 +765,7 @@ hr {
 
 <p>The function <strong>flowLimit()</strong> can be run in 3 possible ways:</p>
 
-<p><em>NodesMin &amp;lt;- flowLimit(limfile = N4, limList = N4LIM,</em><em>flow = &ldquo;invertebrate-&amp;gt;detNLNode&rdquo;,minVal = val1)</em></p>
+<p><em>NodesMin &lt;- flowLimit(limfile = N4, limList = N4LIM,</em><em>flow = &ldquo;invertebrate-&gt;detNLNode&rdquo;,minVal = val1)</em></p>
 
 <p><em>NodesMin</em> is a list containing the two restricted objects where the values for the flow from <em>PP</em> to <em>INVERTEBRATE</em> fall above val1.</p>
 
@@ -762,7 +773,7 @@ hr {
 
 <p>Object 2 can be accessed though: <em>NodesMin$FlowMatrices</em></p>
 
-<p><em>NodesMax&amp;lt;- flowLimit(limfile = N4, limList = N4LIM,</em><em>flow = &ldquo;invertebrate-&amp;gt;detNLNode&rdquo;, maxVal = val2)</em></p>
+<p><em>NodesMax&lt;- flowLimit(limfile = N4, limList = N4LIM,</em><em>flow = &ldquo;invertebrate-&gt;detNLNode&rdquo;, maxVal = val2)</em></p>
 
 <p><em>NodesMax</em> is a list containing the two restricted objects where the values for the flow from <em>PP</em> to <em>INVERTEBRATE</em> fall below val2.</p>
 
@@ -770,7 +781,7 @@ hr {
 
 <p>Object 2 can be accessed though: <em>NodesMax$FlowMatrices</em></p>
 
-<p><em>NodesRange&amp;lt;- flowLimit(limfile = N4,limList = N4LIM,</em><em>flow = &ldquo;invertebrate-&amp;gt;detNLNode&rdquo;,minVal = val1, maxVal = val2)</em></p>
+<p><em>NodesRange&lt;- flowLimit(limfile = N4,limList = N4LIM,</em><em>flow = &ldquo;invertebrate-&gt;detNLNode&rdquo;,minVal = val1, maxVal = val2)</em></p>
 
 <p><em>NodesRange</em> is a list containing the two restricted objects where the values for the flow from <em>PP</em> to <em>INVERTEBRATE</em> fall between val1 and val2.</p>
 
@@ -778,7 +789,7 @@ hr {
 
 <p>Object 2 can be accessed though: <em>NodesRange$FlowMatrices</em></p>
 
-<h2>5.2) Packing LIM networks into enaR network objects</h2>
+<h3>5.2) Packing LIM networks into enaR network objects</h3>
 
 <p>To analyse generated networks existing ENA algorithms (e.g. Ulanowicz and Kay, 1991; Allesina and Bondavalli, 2004; Christensen and Walters, 2004; Latham, 2006; Fath and Borrett; 2006, Kazanci, 2007; Kones <em>et al.,</em> 2007) have been recoded in R, in the package <strong>enaR</strong> (Borrett and Lau, 2014). <strong>enaR</strong> requires the network objects to be in a specific format (Butts, 2008). Once multiple flow networks have been generated (10 000 in our example), the <strong>FlowCAr</strong> package provides the required functions to restructure or &#39;pack&#39; these flow networks into <strong>enaR</strong> network objects so they can be read into <strong>enaR</strong> for further analysis.</p>
 
@@ -804,39 +815,39 @@ hr {
 
 <p>F -         The function <em>internalFlowGen</em><strong>()</strong> pulls the flow matrices from N4LIM and removes the externals (which are defined in the <strong>FlowCAr</strong> input file), thus producing a list of flow matrices consisting of only the internal flows (F).</p>
 
-<p>_        InternalFlowMatrices &amp;lt;- internalFlowGen(limfile = N4, limList = N4LIM)_</p>
+<p>_        InternalFlowMatrices &lt;- internalFlowGen(limfile = N4, limList = N4LIM)_</p>
 
 <p>z -         The function <em>inputVector</em><strong>()</strong> generates vectors by processing the rows of &ldquo;input&rdquo; nodes in the flow matrices. The length of the vector is the number of internal nodes in the system, in this instance it will be of length 4. For each node, the total input (all flows originating from outside the system, crossing the boundary) is summed up and a single value is stored as a vector. This is repeated for each matrix in the <em>N4LIM</em> list and a list of vectors is created.</p>
 
-<p>_        inputVectorList &amp;lt;-  inputVector (limfile = N4, limList = N4LIM)_</p>
+<p>_        inputVectorList &lt;-  inputVector (limfile = N4, limList = N4LIM)_</p>
 
 <p>r -         The function <em>respVector</em><strong>()</strong> creates a list of vectors for the respiration flows. Each vector will be the length of the number of internal nodes and the list will be the length of the <em>N4LIM</em> list<em>.</em> This vector receives its values from the respiration node column.</p>
 
-<p>_respVectorList &amp;lt;-  respVector(limfile = N4, limList = N4LIM)       _</p>
+<p>_respVectorList &lt;-  respVector(limfile = N4, limList = N4LIM)       _</p>
 
 <p>e -         The function<em>exportVector</em><strong>()</strong> works in the same way as the inputVector() function, however, this function processes the columns of &ldquo;export&rdquo; nodes in the flow matrices.</p>
 
-<p>_        exportVectorList &amp;lt;- exportVector(limfile = N4, limList = N4LIM)_</p>
+<p>_        exportVectorList &lt;- exportVector(limfile = N4, limList = N4LIM)_</p>
 
 <p>y -         The function <em>outputVector</em><strong>()</strong> simply uses vector addition for the respective export vector and the respiration vector in the vector lists and produces a list of vectors.</p>
 
-<p>_        outputVecList &amp;lt;- outputVector(limfile = N4, expVec = exportVectorList, rspVec = respVectorList)_</p>
+<p>_        outputVecList &lt;- outputVector(limfile = N4, expVec = exportVectorList, rspVec = respVectorList)_</p>
 
 <p>x -         The function <em>biomassVector</em><strong>()</strong> creates a single vector of values representing the biomass of the nodes. These values are pulled from the &ldquo;STOCKS&rdquo; section in the <strong>FlowCAr</strong> file (&ldquo;4node.R&rdquo;).</p>
 
-<p>_        biomassVecList &amp;lt;-biomassVector(limfile = N4)_</p>
+<p>_        biomassVecList &lt;-biomassVector(limfile = N4)_</p>
 
 <p>Living - The function <em>livingVector</em><strong>()</strong> generates a single logical (TRUE/FALSE) vector based on the naming structure of the <strong>FlowCAr</strong> file. Node names with &ldquo;NLnode&rdquo; (not case sensitive) are viewed as non-living nodes and are thus &ldquo;FALSE&rdquo; values in the vector. All living nodes have a &ldquo;TRUE&rdquo; value.</p>
 
-<p>_        livingVecList &amp;lt;- livingVector(limfile = N4)_</p>
+<p>_        livingVecList &lt;- livingVector(limfile = N4)_</p>
 
 <p>This concludes the preparation for &ldquo;packing&rdquo; the <strong>FlowCAr</strong> file into a network object that is usable in <strong>enaR</strong>. Hereafter, the packing can commence.</p>
 
 <p><em>PackNet</em><strong>()</strong> is the function that combines all lists and vectors created for each object and &ldquo;packs&rdquo; the <strong>enaR</strong> network object list, utilising the &ldquo;<em>pack</em>&rdquo; function from the <strong>enaR</strong> package.</p>
 
-<p><em>PackedNetworkObjectList &amp;lt;- PackNet(InternalFlowMatrices, inputVectorList, respVectorList, exportVectorList, outputVecList, biomassVecList, livingVecList)</em></p>
+<p><em>PackedNetworkObjectList &lt;- PackNet(InternalFlowMatrices, inputVectorList, respVectorList, exportVectorList, outputVecList, biomassVecList, livingVecList)</em></p>
 
-<h2>5.3) Main Function</h2>
+<h3>5.3) Main Function</h3>
 
 <p>The main function <strong>enaListGen</strong> provides the user with a &#39;shortcut&#39; function. The <strong>enaListGen</strong> function produces a list of three objects. The first object is the [[1]] limfile created using the <em>LIMbuild</em> function. The second object is the [[2]] list of solved networks using LIM (<em>limList</em>) created using the <em>limListGen</em> function. The third object is the [[3]] list of packed <strong>enaR</strong> network objects. This function is versatile. The user can run through all the steps of the preparation phase and then pack into the list of <strong>enaR</strong> network objects, or the <strong>enaListGen</strong> function can be run from the initial <strong>FlowCAr</strong> input file. The latter will run through the whole preparation phase, creating the <em>limfile,</em> generating the list of LIM networks (<em>limList</em>) and then packing this list into a list of <strong>enaR</strong> network objects (<em>enaList</em>). <em>The</em><em>limName, limListName</em> and <em>enaListName</em> arguments are used to assign names to the objects outputted by the <em>enaListGen</em> function. This function saves the <em>limfile</em> and <em>limList</em> so the user may run the visualisation functions. The following table briefly explains all the <strong>enaListGen</strong> arguments.</p>
 
@@ -888,7 +899,7 @@ hr {
 
 <p>The <strong>enaListGen</strong> function is run is follows:</p>
 
-<p>N4list &amp;lt;- enaListGen(&ldquo;4node.R&rdquo;, limName = &ldquo;N4&rdquo;,</p>
+<p>N4list &lt;- enaListGen(&ldquo;4node.R&rdquo;, limName = &ldquo;N4&rdquo;,</p>
 
 <pre><code>                limListName = &amp;quot;N4LIM&amp;quot;, enaListName = &amp;quot;N4ena&amp;quot;, storeAll = FALSE,
 
@@ -957,19 +968,19 @@ hr {
 
 <p>If the preparation phase had already been followed, the <strong>enaListGen</strong> function can still be run to pack the generated list of LIM networks into a list of <strong>enaR</strong> network objects. The arguments <em>limfile</em> and <em>limList</em> are used to specify the already created <em>limfile</em> and list of LIM networks respectively. The function will output the list of three objects, the <em>limfile, limList</em> and <em>enaList</em>. It is only necessary to name the <em>enaList</em> (<em>enaListName</em>) as the function will extract the names of the <em>limfile</em> and <em>limList</em> objects. The <strong>enaListGen</strong> function, after the preparation phase is run as follows:</p>
 
-<p>N4list &amp;lt;- enaListGen(limfile = N4, limList = N4LIM, enaListName = &ldquo;N4ena&rdquo;)</p>
+<p>N4list &lt;- enaListGen(limfile = N4, limList = N4LIM, enaListName = &ldquo;N4ena&rdquo;)</p>
 
 <p>The objects can be accessed as before.</p>
 
-<h2>5.4) Network Validation and Visualisation</h2>
+<h3>5.4) Network Validation and Visualisation</h3>
 
-<p>There is no standardisation in selecting the required number of iterations and jump size in solving flow networks through LIM (Klepper and Van de Kamer, 1987; Vézina and Platt, 1988; Meersche <em>et al.</em>, 2009; Soetaert and van Oevelen, 2010; van Oevelen <em>et al.</em>, 2010). There has also not been a means to illustrate whether the solution space has been adequately sampled by the LIM algorithms. Due to the inherent variability and complexity in ecological systems it is not possible to standardise the required number of iterations and jump size. Less variable and complex systems may require smaller number of iterations and jump sizes, while more variable and complex systems may require a larger number of iterations and jump sizes to adequately sample the solution space (Klepper and Van de Kamer, 1987; Vézina and Platt, 1988; Meersche <em>et al.</em>, 2009; Soetaert and van Oevelen, 2010; van Oevelen <em>et al.</em>, 2010). However, depending on the quality of the data used to set up the initial <strong>FlowCAr</strong> input file the required number of iterations and jump size may vary even more. This package provides functions which allow the user to visually assess whether the solution space has been adequately sampled by the chosen number of iterations and jumps. These plotting functions are run on the list of LIM networks created previously. If this process is being performed during the preparation phase the name of the <em>limfile</em> will be the name assigned when the function <em>LIMbuild</em> was used (e.g. N4) and the name of the <em>limList</em> will be the name assigned when the function <em>limListGen</em> was used (e.g. N4LIM). If the visualisation process is performed after the main function <em>enaListGen</em> was run, the <em>limfile</em> will be the name of the three-object list followed by the dollar sign ($) followed by the name of the <em>limfile</em> (e.g. N4List\(N4) and the _limList_ will be the name of the three-object list followed by the dollar sign (\)) followed by the name of the <em>limList</em> (e.g. N4List$N4LIM).</p>
+<p>There is no standardisation in selecting the required number of iterations and jump size in solving flow networks through LIM (Klepper and Van de Kamer, 1987; Vézina and Platt, 1988; Meersche <em>et al.</em>, 2009; Soetaert and van Oevelen, 2010; van Oevelen <em>et al.</em>, 2010). There has also not been a means to illustrate whether the solution space has been adequately sampled by the LIM algorithms. Due to the inherent variability and complexity in ecological systems it is not possible to standardise the required number of iterations and jump size. Less variable and complex systems may require smaller number of iterations and jump sizes, while more variable and complex systems may require a larger number of iterations and jump sizes to adequately sample the solution space (Klepper and Van de Kamer, 1987; Vézina and Platt, 1988; Meersche <em>et al.</em>, 2009; Soetaert and van Oevelen, 2010; van Oevelen <em>et al.</em>, 2010). However, depending on the quality of the data used to set up the initial <strong>FlowCAr</strong> input file the required number of iterations and jump size may vary even more. This package provides functions which allow the user to visually assess whether the solution space has been adequately sampled by the chosen number of iterations and jumps. These plotting functions are run on the list of LIM networks created previously. If this process is being performed during the preparation phase the name of the <em>limfile</em> will be the name assigned when the function <em>LIMbuild</em> was used (e.g. N4) and the name of the <em>limList</em> will be the name assigned when the function <em>limListGen</em> was used (e.g. N4LIM). If the visualisation process is performed after the main function <em>enaListGen</em> was run, the <em>limfile</em> will be the name of the three-object list followed by the dollar sign ($) followed by the name of the <em>limfile</em> (e.g. N4List$N4) and the <em>limList</em> will be the name of the three-object list followed by the dollar sign ($) followed by the name of the <em>limList</em> (e.g. N4List$N4LIM).</p>
 
-<h3>5.4.1) plotRange</h3>
+<h4>5.4.1) plotRange</h4>
 
 <p>The <strong>plotRange</strong> function allows the user to generate a plot illustrating the possible range of each flow, each iteration (a point-symbol for the value of that flow in each of the possible LIM networks) calculated using the <strong>limListGen</strong> function, the parsimonious solution (Kones <em>et al.</em>, 2006) for each flow and the mean of the ensemble of flow values (van Oevelen <em>et al.,</em> 2010) calculated using the <strong>limListGen</strong> function. This visualisation shows how well the solution space has been sampled and if the parsimonious solution is near the extremes of the range. Having the entire set of possible networks plotted indicates the difference between single solution networks chosen using &#39;best&#39; solutions and considering the whole ensemble of possible ecological networks created from a range of input data.</p>
 
-<p>If the <strong>flowLimit</strong> function has been applied, the resulting restrictions can be plotted. This visualisation indicates how much the flow has been limited and how much the applied restrictions influence other flows (Figure 5). In figure 4, the lines represent the flow range, the black point gives the parsimonious solution, the green point indicates the mean of the iterations and each red cross represents an iteration (Figure 4).</p>
+<p>If the <strong>flowLimit</strong> function has been applied, the resulting restrictions can be plotted. This visualisation indicates how much the flow has been limited and how much the applied restrictions influence other flows. The lines represent the flow range, the black point gives the parsimonious solution, the green point indicates the mean of the iterations and each red cross represents an iteration.</p>
 
 <p><em>plotRange(limfile = N4, limList = N4LIM, legend = TRUE)</em></p>
 
@@ -977,7 +988,7 @@ hr {
 
 <p><em>plotRange(limfile = N4List$N4, limList = N4List$N4LIM, legend = TRUE)</em></p>
 
-<p>The parsimonious solution can be seen to lie to the extremes of the flow range (Figure 4) (Kones <em>et al.</em>, 2006). The mean solution (van Oevelen <em>et al.</em>, 2010) of the ensemble of networks (10 000 networks in this example), in many cases does not adequately represent the flow as it also falls to the extremes and can occur close to the parsimonious solution (Figure 4). Figure 4 illustrates the difference between considering all possible solutions and attempting to select a &#39;best&#39; solution.</p>
+<p>The parsimonious solution can be seen to lie to the extremes of the flow range (Kones <em>et al.</em>, 2006). The mean solution (van Oevelen <em>et al.</em>, 2010) of the ensemble of networks (10 000 networks in this example), in many cases does not adequately represent the flow as it also falls to the extremes and can occur close to the parsimonious solution. The difference between considering all possible solutions and attempting to select a &#39;best&#39; solution.</p>
 
 <p>If the <strong>flowLimit</strong> function (as done in section 5.1.2.2) <em>flowLimit</em>) has been used to apply restrictions the <em>plotRange</em> function is run as follows:</p>
 
@@ -991,9 +1002,9 @@ hr {
 
 <p>Further arguments are defaulted to the <em>Plotranges</em> function from <strong>LIM</strong> package e.g. main title and x axis label.</p>
 
-<h3>5.4.2) plotNodeFlows</h3>
+<h4>5.4.2) plotNodeFlows</h4>
 
-<p>The <strong>plotNodeFlows()</strong> function allows the user to generate a plot illustrating the frequency of values for each flow over all generated networks. This function only illustrates all flows leaving a defined node rather than all nodes, as one plot cannot accommodate all flows. The <strong>plotNodeFlows</strong> function produces a density plot, histogram and boxplot showing the range of values for each flow leaving the specified node (Figure 6). Note the need to have the whole node name in uppercase as the <em>LIMbuild</em> function creates it in this manner and the need for &ldquo;Quotation marks&rdquo;.</p>
+<p>The <strong>plotNodeFlows()</strong> function allows the user to generate a plot illustrating the frequency of values for each flow over all generated networks. This function only illustrates all flows leaving a defined node rather than all nodes, as one plot cannot accommodate all flows. The <strong>plotNodeFlows</strong> function produces a density plot, histogram and boxplot showing the range of values for each flow leaving the specified node. Note the need to have the whole node name in uppercase as the <em>LIMbuild</em> function creates it in this manner and the need for &ldquo;Quotation marks&rdquo;.</p>
 
 <p><em>plotNodeFlows(limfile = N4, limList =  N4LIM, flow=  &ldquo;INVERTEBRATE&rdquo;)</em></p>
 
@@ -1001,25 +1012,21 @@ hr {
 
 <p><em>plotNodeFlows(limfile = N4List$N4, limList =  N4List$N4LIM, flow=  &ldquo;INVERTEBRATE&rdquo;)</em></p>
 
-<p>This will produce the following plots:</p>
+<h4>5.4.3) plotFlowRange</h4>
 
-<h3>5.4.3) plotFlowRange</h3>
+<p>The <strong>plotFlowRange</strong> function allows the user to generate a plot which illustrates the frequency an individual flow has been sampled. The plot will illustrate the MCMC sampling of the flow, for example the InvMort (invertebrate mortality, invertebrate-&gt;detritus) flow. The flow name must be in &ldquo;Quotation marks&rdquo;. If the flows were not named in the <strong>FlowCAr</strong> input file, the flow name can be replaced with the flow itself, &ldquo;<em>invertebrate-&gt;detNLNode</em>&rdquo;.</p>
 
-<p>The <strong>plotFlowRange</strong> function allows the user to generate a plot which illustrates the frequency an individual flow has been sampled. The plot will illustrate the MCMC sampling of the flow, for example the InvMort (invertebrate mortality, invertebrate-&amp;gt;detritus) flow. The flow name must be in &ldquo;Quotation marks&rdquo;. If the flows were not named in the <strong>FlowCAr</strong> input file, the flow name can be replaced with the flow itself, &ldquo;<em>invertebrate-&amp;gt;detNLNode</em>&rdquo;.</p>
-
-<p><em>plotFlowRange(limList = N4LIM, flow = &ldquo;invertebrate-&amp;gt;detNLNode&rdquo;)</em></p>
+<p><em>plotFlowRange(limList = N4LIM, flow = &ldquo;invertebrate-&gt;detNLNode&rdquo;)</em></p>
 
 <p>Or</p>
 
-<p><em>plotFlowRange(limList = N4List$N4LIM, flow = &ldquo;invertebrate-&amp;gt;detNLNode&rdquo;)</em></p>
+<p><em>plotFlowRange(limList = N4List$N4LIM, flow = &ldquo;invertebrate-&gt;detNLNode&rdquo;)</em></p>
 
-<p>This will produce the following plot:</p>
+<p>The flow from &ldquo;<em>invertebrate-&gt;detNLNode</em>&rdquo; has been well sampled with a normal distribution of flow values.</p>
 
-<p>The flow from &ldquo;<em>invertebrate-&amp;gt;detNLNode</em>&rdquo; has been well sampled with a normal distribution of flow values (Figure 7).</p>
+<p>The flow from &ldquo;<em>invertebrate-&gt;vertebrate</em>&rdquo; has been well sampled but is skewed towards the higher values. This plot shows the importance of having a high number of iterations to ensure the values which are sampled proportionally less (in the <em>invertebrate-&gt;vertebrate</em> flow, the lower values) still get represented in the ensemble.</p>
 
-<p>The flow from &ldquo;<em>invertebrate-&amp;gt;vertebrate</em>&rdquo; has been well sampled but is skewed towards the higher values (Figure 8). This plot shows the importance of having a high number of iterations to ensure the values which are sampled proportionally less (in the <em>invertebrate-&amp;gt;vertebrate</em> flow, the lower values) still get represented in the ensemble.</p>
-
-<h1>6.) Producing Indices from packed enaRList using enaR package:</h1>
+<h2>6.) Producing Indices from packed enaRList using enaR package:</h2>
 
 <p>Traditionally, Ecological Network Analysis (ENA) has been used to examine the structure, function and dynamics of single networks. One of the goals of the <strong>FlowCAr</strong> package is to facilitate the analysis of multiple networks representing the ranges of input data. Once the list of <strong>enaR</strong> network objects has been packed they can be analysed using <strong>enaR</strong>. This will produce a range of values for a single ENA metric.</p>
 
@@ -1029,11 +1036,11 @@ hr {
 
 <p>For example, a basic flow analysis (Ulanowicz, 1986, Fath and Patten, 1999) can be run on the enaRList:</p>
 
-<p><em>Flow4 &amp;lt;- lapply(N4List$ena4, enaFlow)</em></p>
+<p><em>Flow4 &lt;- lapply(N4List$ena4, enaFlow)</em></p>
 
 <p>Incorporated in the Flow Analysis are various ENA indices, such as Total System Throughput (TSTp) (Ulanowicz, 1986). The TSTp gives an indication of the amount of energy moving through the system (Ulanowicz, 1986). This can be calculated from the list of <strong>enaR</strong> network objects as follows:</p>
 
-<p><em>N4TSTp &amp;lt;- lapply(N4List$ena4, function(x) enaFlow(x)$ns[3])</em></p>
+<p><em>N4TSTp &lt;- lapply(N4List$ena4, function(x) enaFlow(x)$ns[3])</em></p>
 
 <p>TSTp is the third network statistic of the flow analysis function.</p>
 
@@ -1043,7 +1050,7 @@ hr {
 
 <p>Density plots of a single index:</p>
 
-<p><em>dr4 &amp;lt;- density(N4TSTp)</em></p>
+<p><em>dr4 &lt;- density(N4TSTp)</em></p>
 
 <p><em>plot(dr4,type =&ldquo;l&rdquo;,lwd = 5,</em></p>
 
@@ -1051,13 +1058,13 @@ hr {
 
 <p>_     ylab=&ldquo;Density&rdquo;,cex.lab = 1.5,main=&ldquo;&rdquo;)_</p>
 
-<p>This plot (Figure 9) shows the range of values of the TSTp ENA index. The range of TSTp is normally distributed. This plot indicates the importance of presenting this range and not just the mean or median as there is high variability in the amount of energy passing through (TSTp) the various generated networks. While the distribution of this ENA metric (TSTp) is normally distributed, this is not always the case (Figure 11). The distribution of values may be skewed or bimodal (Figure 11).</p>
+<p>This plot shows the range of values of the TSTp ENA index. The range of TSTp is normally distributed. This plot indicates the importance of presenting this range and not just the mean or median as there is high variability in the amount of energy passing through (TSTp) the various generated networks. While the distribution of this ENA metric (TSTp) is normally distributed, this is not always the case. The distribution of values may be skewed or bimodal.</p>
 
 <p>A very useful function from <strong>enaR</strong> is <em>get.ns</em>. This function extracts all the network statistics (ns) for each network. The <em>do.call</em> function is used to reshape the network statistics into a single data frame:</p>
 
-<p><em>N4NS &amp;lt;- lapply(N4List$ena4, get.ns)</em></p>
+<p><em>N4NS &lt;- lapply(N4List$ena4, get.ns)</em></p>
 
-<p><em>N4NSstats &amp;lt;- do.call(rbind, N4NS)</em></p>
+<p><em>N4NSstats &lt;- do.call(rbind, N4NS)</em></p>
 
 <p>From here any of the various ENA index networks statistics can easily be extracted, such as the Finn Cycling Index (FCI) (Finn, 1980). The FCI gives an indication of the amount of energy recycled within the system (Finn, 1980):</p>
 
@@ -1077,15 +1084,15 @@ hr {
 
 <p>_     xlab=&ldquo;Finn Cycling Index (FCI)&rdquo;,cex.axis=1.5,cex.lab=1.5)_</p>
 
-<p>The index depicted on the x-axis is the Finn Cycling Index (FCI). The I/D ratio indicates the amount of direct to indirect flows (Borrett <em>et al.</em>, 2006). The relationship of these two indices produced from the ensemble of generated networks from the one system can be assessed. It is interesting to notice that as the cycling within the system increases so does the I/D ratio (Figure 10). This pattern would normally be unidentifiable if only one value for each index was available.</p>
+<p>The index depicted on the x-axis is the Finn Cycling Index (FCI). The I/D ratio indicates the amount of direct to indirect flows (Borrett <em>et al.</em>, 2006). The relationship of these two indices produced from the ensemble of generated networks from the one system can be assessed. It is interesting to notice that as the cycling within the system increases so does the I/D ratio. This pattern would normally be unidentifiable if only one value for each index was available.</p>
 
 <p>Having a range of index values allows the a more accurate comparison of index values between networks of the same system. The following plot shows the relative ascendency (A/DC (Ulanowicz, 1986)) for an estuarine system over four different seasons. The A/DC ratio gives an indication of the ability of the system to recover after a perturbation (Ulanowicz, 1986):</p>
 
-<p>There is an overlap in the A/DC ratio values for three of the seasons (Figure 11). If only one value was available for each seasonal network, such as the parsimonious solution, the overlap of index values would not be evident (Figure 11). Therefore, when comparing the networks, having a range of index values and plotting this range for comparison is necessary, to indicate similarities between networks and highlighting their differences.</p>
+<p>There is an overlap in the A/DC ratio values for three of the seasons. If only one value was available for each seasonal network, such as the parsimonious solution, the overlap of index values would not be evident. Therefore, when comparing the networks, having a range of index values and plotting this range for comparison is necessary, to indicate similarities between networks and highlighting their differences.</p>
 
 <p>There is a large selection of network statistics in the <strong>enaR</strong> package for which this kind of analysis can be done. A description of all <strong>enaR</strong> functions are available in the <strong>enaR</strong> vignette (Borrett and Lau, 2014).</p>
 
-<h1>7.) Conclusions</h1>
+<h2>7.) Conclusions</h2>
 
 <p>Network analysis requires standardisation from the vital construction phase through to the final analysis. The methodology needs to apply rigorous mathematical solutions to solve the unknown flows while incorporating the inherent ecological variability in the model (Klepper and Van de Kamer, 1987; Vézina and Platt, 1988; Meersche <em>et al.</em>, 2009; van Oevelen <em>et al.</em>, 2010; Soetaert and van Oevelen, 2010). van Oevelen <em>et al.,</em> (2010) identified the power of using Linear Inverse Modelling (LIM) (Woodward <em>et al.,</em> 2005) to solve the unknowns in a network. However, the initial parsimonious solution (Kones <em>et al.</em>, 2006) and the suggested mean solution (van Oevelen et al., 2010) only provide a single solution out of a possible infinite number of solutions. This single solution approach that has been used in network analysis has traditionally only focused on the analysis of single networks, producing only a single ENA metric for that network. Hines <em>et al.,</em> (2018) identified the need to measure the affect uncertainty has on the analysis of networks through altering flow values by a certain percent and identifying the effect on ENA indices. It is however, vital to incorporate this variability in the initial construction phase of network modelling.</p>
 
@@ -1095,7 +1102,7 @@ hr {
 
 <p>In conclusion, the <strong>FlowCAr</strong> package provides the tools to move from a single ENA metric per ecosystem to a range of values. <strong>FlowCAr</strong> helps to ensure the solutions to the under determined problem of complex ecosystems is ecologically sound. ENA is a rapidly growing field (Proulx <em>et al.</em>, 2005; Borrett <em>et al.</em>, 2014) with great potential and through the <strong>FlowCAr</strong> package, we hope to assist in this growth.</p>
 
-<h1>8.) References</h1>
+<h2>8.) References</h2>
 
 <p>Allesina, S., Bondavalli, C., &amp; Scharler, U. M. (2005). The consequences of the aggregation of detritus pools in ecological networks. <em>Ecological Modelling</em>, <em>189</em>(1–2), 221–232.</p>
 
@@ -1161,7 +1168,7 @@ hr {
 
 <p>Zhang, Y., Lu, H., Fath, B. D., Zheng, H., Sun, X., &amp; Li, Y. (2016). A Network Flow Analysis of the Nitrogen Metabolism in Beijing, China. <em>Environmental Science &amp; Technology</em>, <em>50</em>(16), 8558–8567.</p>
 
-<h1>9.) Appendix</h1>
+<h2>9.) Appendix</h2>
 
 <p>From: Soetaert, K., &amp; Van Oevelen, D. (2010). Package LIM, implementing linear inverse models in R, 37. With a few edits.</p>
 

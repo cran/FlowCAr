@@ -8,7 +8,7 @@ Graphical representation of flow ranges and possible network flow values
 The plotRange function allows the user to generate a plot illustrating the range of each flow, the parsimonious solution for each flow, the average of the flow value calculated using the (\code{\link{limListGen}}) function, each iteration calculated using the (\code{\link{limListGen}}) function and the restricted flow values using the function (\code{\link{flowLimit}})
 }
 \usage{
-plotRange(limfile, limList, limListLimit = NULL, legend, avcol="green", 
+plotRange(limfile, limList, limListLimit = NULL, legend, avcol="green",
           allcol="red", limitcol="blue", avpch=16, allpch=3, limitpch=3, ...)
 }
 
@@ -68,9 +68,9 @@ A graphical plot
 }
 
 \author{
-Ruchit Mahabir
-
 Christopher Waspe
+
+Ruchit Mahabir
 
 Ursula Scharler
 }

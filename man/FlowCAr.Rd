@@ -28,14 +28,10 @@ Network Validation and Visualisation  \tab \code{\link{plotNodeFlows}}\cr
       \tab \code{\link{plotFlowRange}}\cr
 }
 }
-\references{
-     
-     #TBC
-     
-     }
-\author{Ruchit Mahabir
-
+\author{
 Christopher Waspe
+
+Ruchit Mahabir
 
 Ursula Scharler
 }

@@ -1,4 +1,4 @@
-###mdloti small March 2002 Groups
+###10 Node Foodweb Example
 
 ##Stocks
 
@@ -271,7 +271,7 @@ susNLNode -> susNLNodeExport > 3832.54
 susNLNode -> plk < 8000
 susNLNode -> bac < 8000
 susNLNode -> sedNLNode < 8000
- 
+
 sedNLNode -> susNLNode < 8000
 
 plk -> susNLNode < 6000

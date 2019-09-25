@@ -17,7 +17,9 @@ detNLNode = 10000
 CO2
 
 ppInput
+
 ppExport
+
 detNLNodeInput
 
 vertebrateExport
@@ -28,7 +30,7 @@ detNLNodeExport
 
 ###Variables
 
-!Priamry producers
+!Primary producers
 ppGPP = GPP
 ppR = PR
 ppNPP = ppGPP - ppR
@@ -88,10 +90,14 @@ invertebrateRratioPmax = 4
 vertebratePratioBmin = 0.0003
 vertebratePratioBmax = 0.005
 
-vertebrateRratioPmin = 1.5
-vertebrateRratioPmax = 4
 
 ###End parameters
+
+###Equalities
+
+VerR = 0.75
+
+###End Equalities
 
 ###Inequalities
 
@@ -102,7 +108,6 @@ invertebrateP = invertebrate * [invertebratePratioBmin, invertebratePratioBmax]
 invertebrateR = invertebrateP * [invertebrateRratioPmin, invertebrateRratioPmax]
 
 vertebrateP = vertebrate * [vertebratePratioBmin, vertebratePratioBmax]
-vertebrateR = vertebrateP * [vertebrateRratioPmin, vertebrateRratioPmax]
 
 invertebrateC - InvMort > 0.4*invertebrateC
 invertebrateC - InvMort < 0.75*invertebrateC

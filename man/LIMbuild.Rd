@@ -27,9 +27,7 @@ See "value" in \code{\link[LIM]{Setup}}
 Console output depicting information about what processing will be done.
 
 }
-\references{
---need to reference lim package here
-}
+
 \author{
 Ruchit Mahabir
 
@@ -47,10 +45,9 @@ This function does no calculations and is not a necessity in order to proceed wi
 ##------------------------------------------------------------##
 
   data(N4)
-  N4
-  
+
   #Output generated using the following code
-  
+
   \donttest{N4 <- LIMbuild (Rfile = "4node.R")}
 
 
