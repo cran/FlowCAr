@@ -1,7 +1,7 @@
 Package: FlowCAr
 Title: Flow Network Construction and Analysis
 Type: Package
-Version: 1.1.0
+Version: 1.1.1
 Author: Christopher Waspe, Ruchit Mahabir, Ursula Scharler
 Depends: R (>= 3.5.0)
 Imports: LIM, limSolve, enaR
@@ -13,6 +13,6 @@ LazyData: true
 Suggests: knitr
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2019-09-24 19:13:26 UTC; Christopher
+Packaged: 2019-09-30 06:14:49 UTC; Christopher
 Repository: CRAN
-Date/Publication: 2019-09-25 10:00:02 UTC
+Date/Publication: 2019-09-30 08:50:02 UTC

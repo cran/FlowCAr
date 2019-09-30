@@ -952,7 +952,7 @@ DETNLNODE_</p>
 
 <p>The first section of the result checks the structure of the <strong>FlowCAr</strong> input file. This is vital as <strong>FlowCAr</strong> requires the previously specified rules to accurately create the <strong>enaR</strong> network object. The next section of the result indicates that the list of solved possible networks has been created. The final section of the result indicates the various components of the <strong>enaR</strong> network objects and the list of <strong>enaR</strong> network objects have been created.</p>
 
-<p>The list created by the <em>enaListGen</em> function containing the three objects is named <em>N4List</em>.</p>
+<p>The list created by the <em>enaListGen</em> function containing the three objects is named <em>N4list</em>.</p>
 
 <p>The first object [[1]] can be accessed through: <em>N4list$N4</em></p>
 
@@ -974,7 +974,7 @@ DETNLNODE_</p>
 
 <h3>5.4) Network Validation and Visualisation</h3>
 
-<p>There is no standardisation in selecting the required number of iterations and jump size in solving flow networks through LIM (Klepper and Van de Kamer, 1987; Vézina and Platt, 1988; Meersche <em>et al.</em>, 2009; Soetaert and van Oevelen, 2010; van Oevelen <em>et al.</em>, 2010). There has also not been a means to illustrate whether the solution space has been adequately sampled by the LIM algorithms. Due to the inherent variability and complexity in ecological systems it is not possible to standardise the required number of iterations and jump size. Less variable and complex systems may require smaller number of iterations and jump sizes, while more variable and complex systems may require a larger number of iterations and jump sizes to adequately sample the solution space (Klepper and Van de Kamer, 1987; Vézina and Platt, 1988; Meersche <em>et al.</em>, 2009; Soetaert and van Oevelen, 2010; van Oevelen <em>et al.</em>, 2010). However, depending on the quality of the data used to set up the initial <strong>FlowCAr</strong> input file the required number of iterations and jump size may vary even more. This package provides functions which allow the user to visually assess whether the solution space has been adequately sampled by the chosen number of iterations and jumps. These plotting functions are run on the list of LIM networks created previously. If this process is being performed during the preparation phase the name of the <em>limfile</em> will be the name assigned when the function <em>LIMbuild</em> was used (e.g. N4) and the name of the <em>limList</em> will be the name assigned when the function <em>limListGen</em> was used (e.g. N4LIM). If the visualisation process is performed after the main function <em>enaListGen</em> was run, the <em>limfile</em> will be the name of the three-object list followed by the dollar sign ($) followed by the name of the <em>limfile</em> (e.g. N4List$N4) and the <em>limList</em> will be the name of the three-object list followed by the dollar sign ($) followed by the name of the <em>limList</em> (e.g. N4List$N4LIM).</p>
+<p>There is no standardisation in selecting the required number of iterations and jump size in solving flow networks through LIM (Klepper and Van de Kamer, 1987; Vézina and Platt, 1988; Meersche <em>et al.</em>, 2009; Soetaert and van Oevelen, 2010; van Oevelen <em>et al.</em>, 2010). There has also not been a means to illustrate whether the solution space has been adequately sampled by the LIM algorithms. Due to the inherent variability and complexity in ecological systems it is not possible to standardise the required number of iterations and jump size. Less variable and complex systems may require smaller number of iterations and jump sizes, while more variable and complex systems may require a larger number of iterations and jump sizes to adequately sample the solution space (Klepper and Van de Kamer, 1987; Vézina and Platt, 1988; Meersche <em>et al.</em>, 2009; Soetaert and van Oevelen, 2010; van Oevelen <em>et al.</em>, 2010). However, depending on the quality of the data used to set up the initial <strong>FlowCAr</strong> input file the required number of iterations and jump size may vary even more. This package provides functions which allow the user to visually assess whether the solution space has been adequately sampled by the chosen number of iterations and jumps. These plotting functions are run on the list of LIM networks created previously. If this process is being performed during the preparation phase the name of the <em>limfile</em> will be the name assigned when the function <em>LIMbuild</em> was used (e.g. N4) and the name of the <em>limList</em> will be the name assigned when the function <em>limListGen</em> was used (e.g. N4LIM). If the visualisation process is performed after the main function <em>enaListGen</em> was run, the <em>limfile</em> will be the name of the three-object list followed by the dollar sign ($) followed by the name of the <em>limfile</em> (e.g. N4list$N4) and the <em>limList</em> will be the name of the three-object list followed by the dollar sign ($) followed by the name of the <em>limList</em> (e.g. N4list$N4LIM).</p>
 
 <h4>5.4.1) plotRange</h4>
 
@@ -986,7 +986,7 @@ DETNLNODE_</p>
 
 <p>Or</p>
 
-<p><em>plotRange(limfile = N4List$N4, limList = N4List$N4LIM, legend = TRUE)</em></p>
+<p><em>plotRange(limfile = N4list$N4, limList = N4list$N4LIM, legend = TRUE)</em></p>
 
 <p>The parsimonious solution can be seen to lie to the extremes of the flow range (Kones <em>et al.</em>, 2006). The mean solution (van Oevelen <em>et al.</em>, 2010) of the ensemble of networks (10 000 networks in this example), in many cases does not adequately represent the flow as it also falls to the extremes and can occur close to the parsimonious solution. The difference between considering all possible solutions and attempting to select a &#39;best&#39; solution.</p>
 
@@ -996,7 +996,7 @@ DETNLNODE_</p>
 
 <p>Or</p>
 
-<p><em>plotRange(limfile = N4List$N4, limList = N4List$N4LIM, limListLimit = NodesRange, legend = TRUE)</em></p>
+<p><em>plotRange(limfile = N4list$N4, limList = N4list$N4LIM, limListLimit = NodesRange, legend = TRUE)</em></p>
 
 <p>The colour and style of the points can be changed using the arguments <em>avcol, allcol, limitcol, avpch, allpch</em> and <em>limitpch</em>. The legend argument (defaulted to TRUE) indicates whether to include the legend or not.</p>
 
@@ -1010,7 +1010,7 @@ DETNLNODE_</p>
 
 <p>Or</p>
 
-<p><em>plotNodeFlows(limfile = N4List$N4, limList =  N4List$N4LIM, flow=  &ldquo;INVERTEBRATE&rdquo;)</em></p>
+<p><em>plotNodeFlows(limfile = N4list$N4, limList =  N4list$N4LIM, flow=  &ldquo;INVERTEBRATE&rdquo;)</em></p>
 
 <h4>5.4.3) plotFlowRange</h4>
 
@@ -1020,7 +1020,7 @@ DETNLNODE_</p>
 
 <p>Or</p>
 
-<p><em>plotFlowRange(limList = N4List$N4LIM, flow = &ldquo;invertebrate-&gt;detNLNode&rdquo;)</em></p>
+<p><em>plotFlowRange(limList = N4list$N4LIM, flow = &ldquo;invertebrate-&gt;detNLNode&rdquo;)</em></p>
 
 <p>The flow from &ldquo;<em>invertebrate-&gt;detNLNode</em>&rdquo; has been well sampled with a normal distribution of flow values.</p>
 
@@ -1036,11 +1036,11 @@ DETNLNODE_</p>
 
 <p>For example, a basic flow analysis (Ulanowicz, 1986, Fath and Patten, 1999) can be run on the enaRList:</p>
 
-<p><em>Flow4 &lt;- lapply(N4List$ena4, enaFlow)</em></p>
+<p><em>Flow4 &lt;- lapply(N4list$ena4, enaFlow)</em></p>
 
 <p>Incorporated in the Flow Analysis are various ENA indices, such as Total System Throughput (TSTp) (Ulanowicz, 1986). The TSTp gives an indication of the amount of energy moving through the system (Ulanowicz, 1986). This can be calculated from the list of <strong>enaR</strong> network objects as follows:</p>
 
-<p><em>N4TSTp &lt;- lapply(N4List$ena4, function(x) enaFlow(x)$ns[3])</em></p>
+<p><em>N4TSTp &lt;- lapply(N4list$ena4, function(x) enaFlow(x)$ns[3])</em></p>
 
 <p>TSTp is the third network statistic of the flow analysis function.</p>
 
@@ -1062,7 +1062,7 @@ DETNLNODE_</p>
 
 <p>A very useful function from <strong>enaR</strong> is <em>get.ns</em>. This function extracts all the network statistics (ns) for each network. The <em>do.call</em> function is used to reshape the network statistics into a single data frame:</p>
 
-<p><em>N4NS &lt;- lapply(N4List$ena4, get.ns)</em></p>
+<p><em>N4NS &lt;- lapply(N4list$ena4, get.ns)</em></p>
 
 <p><em>N4NSstats &lt;- do.call(rbind, N4NS)</em></p>
 
